@@ -1003,7 +1003,7 @@ installPiVPN(){
 	if [ "$VPN" = "openvpn" ]; then
 
 		pivpnDEV="tun0"
-		pivpnNET="10.8.0.0"
+		pivpnNET="10.10.0.0"
 		vpnGw="${pivpnNET/.0.0/.0.1}"
 
 		installOpenVPN
@@ -1024,7 +1024,7 @@ installPiVPN(){
 		# set the protocol here.
 		pivpnPROTO="udp"
 		pivpnDEV="wg0"
-		pivpnNET="10.6.0.0"
+		pivpnNET="10.8.0.0"
 		vpnGw="${pivpnNET/.0.0/.0.1}"
 
 		installWireGuard
@@ -1902,8 +1902,8 @@ set_var EASYRSA_ALGO       ${pivpnCERT}" | $SUDO tee vars >/dev/null
 	fi
 
 	# if they modified VPN network put value in server.conf
-	if [ "$pivpnNET" != "10.8.0.0" ]; then
-		$SUDO sed -i "s/10.8.0.0/${pivpnNET}/g" /etc/openvpn/server.conf
+	if [ "$pivpnNET" != "10.10.0.0" ]; then
+		$SUDO sed -i "s/10.10.0.0/${pivpnNET}/g" /etc/openvpn/server.conf
 	fi
 
 	# if they modified VPN subnet class put value in server.conf

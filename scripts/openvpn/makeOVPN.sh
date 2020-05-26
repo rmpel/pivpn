@@ -417,7 +417,7 @@ NET_REDUCED="${pivpnNET::-2}"
 # Find an unused number for the last octet of the client IP
 for i in {2..254}; do
     # find returns 0 if the folder is empty, so we create the 'ls -A [...]'
-    # exception to stop at the first static IP (10.8.0.2). Otherwise it would
+    # exception to stop at the first static IP (10.10.0.2). Otherwise it would
     # cycle to the end without finding and available octet.
     if [ -z "$(ls -A /etc/openvpn/ccd)" ] || ! find /etc/openvpn/ccd -type f -exec grep -q "${NET_REDUCED}.${i}" {} +; then
         COUNT="${i}"
