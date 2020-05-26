@@ -11,7 +11,7 @@
 # Make sure you have `curl` installed
 
 ######## VARIABLES #########
-pivpnGitUrl="https://github.com/pivpn/pivpn.git"
+pivpnGitUrl="https://github.com/rmpel/pivpn.git"
 setupVars="/etc/pivpn/setupVars.conf"
 pivpnFilesDir="/etc/.pivpn"
 
